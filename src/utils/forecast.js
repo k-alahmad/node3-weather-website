@@ -1,5 +1,7 @@
 const request = require('request')
 
+
+
 const forecast = (latitude ,longitude,callback) =>{
     const url = 'http://api.weatherapi.com/v1/current.json?key=0c9b2bf9adef43698b4202243212211&q='+encodeURIComponent(latitude)+','+encodeURIComponent(longitude)
 
@@ -14,7 +16,9 @@ const forecast = (latitude ,longitude,callback) =>{
             callback(undefined,{
                  location: body.location.name,
                  temp_degree:body.current.temp_c,
-                 precip:body.current.precip_in
+                 precip:body.current.precip_in,
+                 condition:body.current.condition.text,
+                 humidity:body.current.humidity
             })
         }
     })

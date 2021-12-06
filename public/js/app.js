@@ -17,8 +17,11 @@ weatherForm.addEventListener('submit',(e)=>{
                 messageOne.textContent = data.error
             } else{
                 messageOne.textContent =  data.location
-                messageTwo.textContent = "The tempreture in "+data.forecast.location + ', ' + data.location + ' is '+ data.forecast.temp_degree +' Degree' + ', There is '+ data.forecast.precip +'% chance of rain.'
+                messageTwo.textContent = "The tempreture in "+data.forecast.location + ', ' + data.location + ' is '+ 
+                data.forecast.temp_degree +' Degree' + ', There is '+ data.forecast.precip +'% chance of rain.'
+                +`The weather condition is ${data.forecast.condition}, and The Humidity is: ${data.forecast.humidity}% ` 
                 console.log(data.forecast) 
+
             }
         })
     })
